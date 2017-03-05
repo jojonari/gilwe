@@ -114,7 +114,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#about">About</a></li>
+                <#--<li>-->
+                    <#--<form action="/connect/facebook" method="POST"><button type="submit">Connect to Facebook</button></form>-->
+                <#--</li>-->
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -149,7 +151,46 @@
 
 <#--메인화면 이미지 리스트-->
 <div class="container">
-    <h2>List</h2>
+    <h2>추천길<small class="pull-right">더보기 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small></h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/image/main/main_title_0.png" alt="" class="listimg">
+                <div class="caption">
+                    <h3>도를 찾아 가출하는길
+                        <img class="img-circle list_user_img" alt="userImg" src="/image/main/main_title_1.png">
+                    </h3>
+                    <p>5.3km | 1시간 20분 | 천안</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/image/logo_inverse.png" alt="" class="listimg">
+                <div class="caption">
+                    <h3>도를 찾아 가출하는길
+                        <img class="img-circle list_user_img" alt="userImg" src="/image/main/main_title_1.png">
+                    </h3>
+                    <p>5.3km | 1시간 20분 | 천안</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="/image/main/main_title_1.png" alt="" class="listimg">
+                <div class="caption">
+                    <h3>도를 찾아 가출하는길
+                        <img class="img-circle list_user_img" alt="userImg" src="/image/main/main_title_1.png">
+                    </h3>
+                    <p>5.3km | 1시간 20분 | 천안</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><#-- container-->
+
+<div class="container">
+    <h2>새로 추가된 길<small class="pull-right">더보기 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small></h2>
     <div class="row">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
@@ -200,7 +241,7 @@
             <img src="/image/main/main_1.png" class="bottomImg">
         </div>
     </div>
-    <div class="row featurette">
+    <div class="row featurette hidden-xs">
         <div class="col-md-6">
             <img src="/image/main/main_2.png" class="bottomImg">
         </div>
@@ -231,7 +272,7 @@
                     <h2>내가 걷는 길 위에 추억을 남겨 보세요.</h2>
                     <p>내가 걷는 길위에 추억을 남기고, 네가 걷던 길을 따라 걷는다.</p>
                     <div class="input-group">
-                        <input type="email" class="form-control" placeholder="@E-MAIL..." style="width: 450px;">
+                        <input type="email" class="form-control" placeholder="email 주소를 등록하세요.">
                         <span class="input-group-btn">
                         <button class="btn" type="button" style="background-color: #fca48e;">SUBMIT</button>
                     </span>
@@ -243,7 +284,9 @@
     </div>
 </div>
 
-<script type="text/javascript" charset="utf-8">
+
+
+<script>
     $(".flexslider").flexslider({
         animation: "slide",     //애니메이션 슬라이드
         slideshowSpeed: 3000    //애니메이션 간격 3
