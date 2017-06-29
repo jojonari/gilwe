@@ -7,5 +7,71 @@
         SELECT NOW() as time
     </select>
 
+    <select id="getMainSuggestList" resultType="com.gilwe.service.vo.mainlistVo" parameterType="map">
+        SELECT
+            r.id AS road_id,
+            r.title,
+            r.address,
+            r.duration,
+            r.distance,
+            u.name,
+            u.profileUrl,
+            min(s.id) AS spot_id,
+            min(s.image)AS image
+        FROM roads r
+        LEFT JOIN users u ON r.user_id = u.id
+        LEFT JOIN spots s on r.id = s.road_id
+        WHERE s.image is NOT NULL
+        group by r.id
+        order by count(s.id)desc
+            limit 3
+
+    </select>
+
+    <select id="getMainNewRoadList" resultType="com.gilwe.service.vo.mainlistVo" parameterType="map">
+        SELECT
+            r.id AS road_id,
+            r.title,
+            r.address,
+            r.duration,
+            r.distance,
+            u.name,
+            u.profileUrl,
+            min(s.id) AS spot_id,
+            min(s.image)AS image
+        FROM roads r
+        LEFT JOIN users u ON r.user_id = u.id
+        LEFT JOIN spots s on r.id = s.road_id
+        WHERE s.image is NOT NULL
+        group by r.id
+        order by r.created_at desc
+        limit 3
+
+    </select>
+
+    <select id="getRoadInfo" resultType="com.gilwe.service.vo.roadVo" parameterType="string">
+        SELECT
+          r.id AS road_id,
+          r.title,
+          r.address,
+          r.distance,
+          r.duration,
+          r.startedAt,
+          r.updatedAt,
+          r.bookmarkCount,
+          r.created_at,
+          r.updated_at,
+          r.likeCount,
+          r.endedAt,
+          r.user_id,
+          u.name,
+          u.profileUrl
+
+        FROM roads r
+          LEFT JOIN users u ON r.user_id = u.id
+        WHERE r.id=#{road_id}
+
+    </select>
+
 </mapper>
 

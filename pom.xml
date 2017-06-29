@@ -6,7 +6,7 @@
 	<groupId>com.gilwe</groupId>
 	<artifactId>web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>web</name>
 	<description>sicamp36_gilwe-web</description>

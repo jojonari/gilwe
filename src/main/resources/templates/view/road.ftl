@@ -150,38 +150,8 @@
 <div class="container">
     <h2>추천길<small class="pull-right">더보기 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small></h2>
     <div class="row">
-    <#list suggestList as item>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="/image/uploads/spot/image/${item.spot_id}/${item.image}" alt="" class="listimg">
-                <div class="caption">
-                    <h3><a href="/road/${item.road_id}">${item.title}</a>
-                        <img class="img-circle list_user_img" alt="userImg" src="${item.profileUrl}">
-                    </h3>
-                    <p>${item.distance}km | ${(item.duration?number / 60)?floor}시간 ${(item.duration?number % 60)}분 | ${item.address}</p>
-                </div>
-            </div>
-        </div>
-    </#list>
-    </div>
-</div><#-- container-->
+    ${getRoadInfo.name}
 
-<div class="container">
-    <h2>새로 추가된 길<small class="pull-right">더보기 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></small></h2>
-    <div class="row">
-    <#list newRoadList as item>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <img src="/image/uploads/spot/image/${item.spot_id}/${item.image}" alt="" class="listimg">
-                <div class="caption">
-                    <h3><a href="/road/${item.road_id}">${item.title}</a>
-                        <img class="img-circle list_user_img" alt="userImg" src="${item.profileUrl}">
-                    </h3>
-                    <p>${item.distance}km | ${(item.duration?number / 60)?floor}시간 ${(item.duration?number % 60)}분 | ${item.address}</p>
-                </div>
-            </div>
-        </div>
-    </#list>
     </div>
 </div><#-- container-->
 
